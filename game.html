@@ -1,0 +1,80 @@
+<!Doctype html>
+<html>
+<title>minesweeper</title>
+<link rel="stylesheet" href="game.css" />
+<!--https://fonts.google.com/-->
+<link href="https://fonts.googleapis.com/css?family=Nova+Mono|Black+Ops+One|Space+Mono" rel="stylesheet">
+<!-- Created using http://fontello.com/-->
+<link rel="stylesheet" href="fontello/css/game.css" />
+<header>
+    <h1>M I N E S W E E P E R</h1>
+    <!-- carefully see how events are embedded-->
+    <div class="level">
+        <span>Start Level</span>
+        <a href='#' onclick="createGame('easy');">Easy</a> |
+        <a href='#' onclick="createGame('medium');">Medium</a> |
+        <a href='#' onclick="createGame('hard');">Hard</a>
+    </div>
+    <div id="rules" onmouseover="slideInDiv('rule-details');" onmouseout="slideOutDiv('rule-details');"><i class="icon-hammer"></i> Rules</div>
+    <div id="halloffame" onmouseover="slideInDiv('bestscores');" onmouseout="slideOutDiv('bestscores');"><i class="icon-award"></i> Hall of fame</div>
+</header>
+<main>
+    <div class="hidden" id="rule-details">
+        <h2>Learning Minesweeper Mechanics</h2>
+        <ol>
+            <li><strong>Understand the principles behind Minesweeper.</strong> Each Minesweeper game starts out with a grid of unmarked squares.
+                After clicking one of these squares, some of the squares will disappear, some will remain blank, and some
+                will have numbers on them. It's your job to use the numbers to figure out which of the blank squares have
+                mines and which are safe to click. Minesweeper is similar to a Sudoku puzzle in that your success is largely
+                contingent on being able to eliminate possible answers until only one answer remains.
+            </li>
+            <li><strong>Use the mouse buttons.</strong> The mouse is the only tool that you'll need to play Minesweeper. The
+                left mouse button is used to click squares that don't contain mines, while the right mouse button is used
+                to flag squares that contain mines. You can use middle mouse button to visualize the neighboring unopened squares.
+            </li>
+            <li><strong>Don't worry about your first click.</strong> The first square that you click will never have a mine beneath it; clicking
+                a square will clear off some of the board while numbering other squares.
+            </li>
+            <li><strong>Know what the numbers mean.</strong> A number on a square refers to the number of mines that are currently touching that
+                square. For example, if there are two squares touching each other and one of the squares has "1" on it, you
+                know that the square next to it has a mine beneath it.
+            </li>
+        </ol>
+    </div>
+
+    <div class="hidden" id="bestscores">
+        <h2>YOUR BEST!</h2>
+        <ol>
+            <li><strong>EASY</strong> <i id="easytoon" class="gametoon icon-emo-sleep"></i> <span id="easytime">Not Attempted</span>
+            </li>
+            <li><strong>MEDIUM</strong> <i id="mediumtoon" class="gametoon icon-emo-sleep"></i> <span id="mediumtime">Not Attempted</span>
+            </li>
+            <li><strong>HARD</strong> <i id = "hardtoon" class="gametoon icon-emo-sleep"></i> <span id="hardtime">Not Attempted</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="game">
+        <div class="stats">
+            <div class="time">
+                <i class="icon-hourglass-o"></i>
+                <span id="timer">00:00:00</span>
+            </div>
+            <div class="bombs">
+                <i class="icon-bomb"></i>
+                <span id="bombs">00</span>
+            </div>
+            <i id="toon" class="gametoon icon-emo-sleep"></i>
+        </div>
+        <div class="gameboard" id="gameboard">
+        </div>
+        </table>
+    </div>
+</main>
+<footer>
+    <p>Like us on Facebook</p>
+</footer>
+<!--Include our JavaScripts-->
+<script src="game.js"></script>
+
+</html>

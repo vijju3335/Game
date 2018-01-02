@@ -1,0 +1,321 @@
+body, h1{
+    margin:0;
+    padding:0;
+}
+.game {
+    text-align:center;
+}
+
+header {
+    padding: 20px 0;
+    background-color:#333333;
+    color:#cccccc;
+    text-align:center;
+    font-family: 'Black Ops One', cursive;
+}
+
+header h1 {
+    font-size:4em;
+}
+
+#rules, #halloffame {
+    position:absolute;
+    top:210px;
+    background: orange;
+    padding:10px 10px 10px 10px;
+    color:white;
+    font-size:1.5em;
+    cursor:pointer;
+}
+
+#rules:hover, #halloffame:hover {
+    background: orangered;
+}
+
+#rules {
+    left:0px;
+    padding-left:5px;
+    border-radius: 0 10px 10px 0;
+    
+}
+
+#halloffame {
+    right:0px;
+    border-radius: 10px 0 0 10px;
+}
+
+#rule-details {
+    position:absolute;
+    top:100px;
+    left:200px;
+    width:500px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    background: lightgreen;
+    border: 10px solid #555555;
+    border-radius: 20px;
+    padding-right:20px;
+    animation-duration: 1s;
+}
+
+#bestscores {
+    position:absolute;
+    top:100px;
+    right:250px;
+    width:300px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    background: slateblue;
+    border: 10px solid lightsteelblue;
+    color:white;
+    border-radius: 20px;
+    padding-left:20px;
+    animation-duration: 1s;
+}
+
+#bestscores ol {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+#bestscores li > i {
+    padding: 5px 2px;
+    margin: 10px;
+    color:black;
+}
+
+#bestscores li > strong {
+    font-family: 'Nova Mono', monospace;
+    display:inline-block;
+    width:80px;
+    font-size:1.2em;
+}
+
+#bestscores li > span {
+    font-family: 'Space Mono', monospace;
+    text-align: right;
+}
+
+#bestscores h2 {
+    text-align: center;
+}
+
+.hidden {
+    display:none;
+}
+
+@keyframes slideIn {
+    0% {opacity: 0; top:50px;}
+    100% {opacity: 1; top:100px;}
+}
+
+.slidein {
+    animation-name: slideIn;
+    display:block;
+}
+
+@keyframes slideOut {
+    0% {opacity: 1; top:100px;}
+    100% {opacity: 0; top:200px;}
+}
+
+.slideout {
+    animation-name: slideOut;
+}
+
+#rule-details li {
+    margin-top:10px;
+}
+
+#rule-details strong {
+    font-size: 1.1em;
+}
+
+#rule-details h2 {
+    text-align: center;
+}
+
+
+
+.level {
+    padding:5px;
+    font-size:2em;
+}
+
+.level span {
+    margin-right:10px;
+    line-height:30px;
+}
+
+.level a {
+    color: orange;
+    text-decoration: none;
+}
+
+.level a:hover {
+    color:lime;
+}
+
+.level a:active {
+    color: cyan;
+}
+
+header li i {
+    font-size:30px;
+    line-height: 30px;
+}
+
+.stats {
+    margin:30px 0 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.bombs, .time{ 
+    font-family: 'Space Mono', monospace;;
+    font-size:30px;
+}
+
+.bombs {
+    margin:0 30px;
+}
+
+
+td {
+    padding:0px;
+    box-sizing: border-box;
+    width:40px;
+    height:40px;
+    text-align: center;
+    font-family: 'Nova Mono', monospace;
+    font-size: 25px;
+    font-weight:bold;
+}
+
+
+table {
+    display:inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse:separate;
+    border-spacing: 0px;
+    border: 10px solid #888888;
+}
+
+.open {
+    background-color: #dddddd;
+    border:1px solid #888888;
+    
+}
+.open>span, .open>i {
+    cursor:default;
+}
+
+.red {
+    color:red;
+}
+
+.font-1 {
+    color: blue;
+}
+
+.font-2 {
+    color: darkgreen;
+}
+
+.font-3 {
+    color:red;
+}
+
+.font-4 {
+    color:navy;
+}
+
+.font-5 {
+    color: darkred;
+}
+
+.font-6 {
+    color: darkcyan;
+}
+
+.font-7 {
+    color:#333333;
+}
+
+.font-8 {
+    color:#888888;
+}
+
+.blast {
+    background: red;
+    border: 1px solid red;
+    color:yellow;
+}
+
+.closed {
+    cursor:crosshair;
+    background-color: #cccccc;
+    border-top: 2px solid #eeeeee;
+    border-left: 2px solid #eeeeee;
+    border-bottom: 2px solid #aaaaaa;
+    border-right: 2px solid #aaaaaa;
+}
+
+.closed:hover {
+    background-color: orange;
+    border-top: 2px solid #ffcc00;
+    border-left: 2px solid #ffcc00;
+    border-bottom: 2px solid #aa7700;
+    border-right: 2px solid #aa7700;
+}
+
+.indicate {
+    background-color: mediumpurple;
+    border-top: 2px solid #b390f8;
+    border-left: 2px solid #b390f8;
+    border-bottom: 2px solid #7350b8;
+    border-right: 2px solid #7350b8;
+}
+
+.error {
+    background-image: url("images/wrong.png");
+}
+
+.stats {
+    height:50px;
+    padding:10px;
+}
+
+.gametoon {
+    display:inline-block;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius:60px;
+    padding:10px 2px;
+    background-color: orange;
+}
+
+footer {
+    background: #444444;
+    margin-top:20px;
+    text-align: center;
+    color:#cccccc;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    padding:10px;
+}
+
+.gameboard {
+    background-image: url("images/mine.svg");
+    background-repeat: no-repeat;
+    background-position: center; 
+    min-height:500px;
+}
+
+.gameboard.active {
+    background-image:none;
+}
