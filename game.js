@@ -103,7 +103,9 @@ var endGame = function () {
                 GAME.checkIsBombFlagged=1;
             }
             if((cell.getAttribute("marked")=="true") && GAME.layout[row][col] != -1){
+		cell.removeChild(cell.firstChild);
                 cell.classList.add("error");
+                cell.classList.add("icon-bomb");
             }
             // if cell was marked but it does not have a bomb i.e. GAME.layout[row][col] != -1
             // then add "Error" class to the cell's dom element
@@ -362,6 +364,7 @@ var setBoardParams = function (level) {
     GAME.level = level;
     GAME.markedCorrect = 0;
     GAME.openCellCount = 0;
+    GAME.flaggedCells=0;
     GAME.score = 0;
     GAME.time = 0;
     if (level == 'easy') {
