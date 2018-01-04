@@ -134,11 +134,12 @@ var updateHallOfFame = function(time, outcome) {
     var toonid = GAME.level + "toon";
     time=getFormattedTime(time);
     if(outcome){
-        document.getElementById(timeid).innerText=time;
+	Prompt(time);//to update User Name also
+        //document.getElementById(timeid).innerText=time;
         document.getElementById(toonid).className = "gametoon icon-emo-sunglasses";
     }
     if(!outcome){
-        document.getElementById(timeid).innerText=time;
+        document.getElementById(timeid).innerText="You Lost";
         document.getElementById(toonid).className = "gametoon icon-emo-unhappy";
     }
     //
@@ -617,11 +618,17 @@ var slideOutDiv = function(id) {
 }
 /* FOR ALERT MESSAGE */
 
-myPrompt = function() {
+
+myPrompt = function(time) {
     var txt;
+    var timeid = GAME.level + "time";
     var person = prompt("GAME WON :-)\n\nPlease enter your name:", "New User");
     if (person == null || person == "") {
         txt = "User cancelled the prompt.";
+    }
+    else{
+        //Updating HallofFarme
+        document.getElementById(timeid).innerText=person +" "+time;
     }
 }
 myAlert = function() {
