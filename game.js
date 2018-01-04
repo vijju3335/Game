@@ -87,23 +87,30 @@ var endGame = function () {
             var cell = GAME.Cells[row][col]; // fetch the cell dom element
             // if cell has a class of "closed" 
             if(cell.classList.contains("closed")){
+                if((GAME.layout[row][col]==-1) && cell.getAttribute("marked")=="true"){
+			//nothing to do just leave it
+                }
+                else{
                 openCell(row,col);
+                }
             }
             //      (use contains property of classList method )
             //      https://www.w3schools.com/jsref/prop_element_classlist.asp
             // open the cell that is closed
             // if cell is flagged (check if cell's "marked" attribure is set to "true")
-            if(cell.getAttribute("marked") == "true"){
+           /* if(cell.getAttribute("marked") == "true"){
                 cell.removeChild(cell.firstChild);
-            }
+            }*/
             //      https://www.w3schools.com/jsref/met_element_getattribute.asp
             // then remove the flag (cell.firstchild) by using removeChild method on dom element
             //      https://www.w3schools.com/jsref/met_node_removechild.asp
             if((cell.getAttribute("marked")=="false") && GAME.layout[row][col] == -1){
                 GAME.checkIsBombFlagged=1;
             }
+            
             if((cell.getAttribute("marked")=="true") && GAME.layout[row][col] != -1){
-		cell.removeChild(cell.firstChild);
+                cell.removeChild(cell.firstChild);
+                cell.removeChild(cell.firstChild);
                 cell.classList.add("error");
                 cell.classList.add("icon-bomb");
             }
@@ -607,4 +614,16 @@ var slideOutDiv = function(id) {
     animateTimeout = setTimeout(function() {
         rules.className = "hidden";
     }, 1000);
+}
+/* FOR ALERT MESSAGE */
+
+myPrompt = function() {
+    var txt;
+    var person = prompt("GAME WON :-)\n\nPlease enter your name:", "New User");
+    if (person == null || person == "") {
+        txt = "User cancelled the prompt.";
+    }
+}
+myAlert = function() {
+    alert("You Lost :-(");
 }
