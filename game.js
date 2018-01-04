@@ -14,6 +14,7 @@ var GAME = {
     time: 0,           // current time measurement in seconds
     timer: undefined,  // JavaScript timer object to setInterval
     flaggedCells: 0,   // total cells flagged by user
+    allow : 0,
     bestScores: [      // hall of fame static array of objects
         {outcome:false, time:0}, // easy
         {outcome:false, time:0}, // medium
@@ -129,6 +130,7 @@ var stopTimer = function () {
 }
 
 var updateHallOfFame = function(time, outcome) {
+    GAME.allow=1;
     var timeid = GAME.level + "time";
     console.log("LEVEL"+timeid);
     var toonid = GAME.level + "toon";
@@ -258,7 +260,8 @@ var resetNeighbors = function (row, col) {
 }
 
 var handleMouseEvents = function (mouseButton, row, col, marked) {
-    if (mouseButton == 0 && !marked) {
+    if(GAME.allow==0){
+	    if (mouseButton == 0 && !marked) {
         // process left click (open cell, or boundary or blast bomb if clicked on bomb)
         handleLeftClick(row, col);
     } else if (mouseButton == 1) {
@@ -375,6 +378,7 @@ var setBoardParams = function (level) {
     GAME.flaggedCells=0;
     GAME.score = 0;
     GAME.time = 0;
+    GAME.allow = 0;
     if (level == 'easy') {
         GAME.rows = GAME.cols = 9;
         GAME.bombs = 10;
